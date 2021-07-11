@@ -22,12 +22,12 @@ book.json
 * ga：Google Analytics，可以填入自己的 trace code。
 
 3. 上傳 book 檔案到 github repository
-   '''
+   ```
     git init
     git add -A
     git commit -m "mybook version: 1.0"
     git push origin master
-   '''
+   ```
 4. 設定 GitHub Access Token & GitHub Page
 
   讓 GitHub Actions 能自動幫我們發佈 GitBook 成果到 GitHub Pages，必須授權 GitHub 操作我們的 Repository。作法就是設定 Access Token。
@@ -56,7 +56,7 @@ book.json
 
   設定 GitHub Actions，讓它能自動幫我們製書和發佈到 GitHub Pages。回到資料夾，新增一個 .github/workflows/build.yml 檔案
 
-  '''
+```
    name: Build my gitbook and deploy to gh-pages
 
 on:
@@ -80,19 +80,19 @@ jobs:
       uses: actions/checkout@v2.3.1
     - name: Build and Deploy 
       uses: onejar99/gitbook-build-publish-action@v1.0.0
-  '''
+```
 
   上面 GitHub Actions 的設定檔，稱為一個「workflow」。裡面用到官方的 checkout action，這幾乎是每個 workflow 的起手式。另外用到[1]寫的一個 gitbook action，負責將 markdown 檔製成 GitBook 靜態網站，並自動將網站檔案 commit 到 gh-pages branch。 
   USER_NAME & USER_EMAIL要修改跟github帳號設定一致，BOOK_DIR依據你的目錄設置但不能用『.』或『/』。
 
-6. 將 Workflow 檔推上 GitHub，觸發自動發佈到 GitHub Pages
+1. 將 Workflow 檔推上 GitHub，觸發自動發佈到 GitHub Pages
    
    將剛剛新增的 workflow 檔進行 commit 和 push
-   '''
+   ```
     git add -A
     git commit -m "Update #1"
     git push origin master
-   '''
+   ```
 
   回到 GitHub Repository 頁面，點「Actions」tab，會看到有一個 workflow 任務被自動觸發執行中。
   等到執行完畢變成綠勾勾，會看到自動建立了 gh-pages branch 並 commit GitBook 靜態網站的檔案，這時候就能到 GitHub Pages 檢視 GitBook。 在GitHub Page : https://<yourname>.github.com/repository_name/
