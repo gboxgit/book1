@@ -11,7 +11,7 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     env:
-      MY_SECRET   : ${{secrets.AUTOBOOK01}}
+      MY_SECRET   : ${{secrets.bookup01}}
       USER_NAME   : gboxgit
       USER_EMAIL  : lch.gbox@gmail.com
       BOOK_DIR    : book1
