@@ -4,7 +4,7 @@
 依據 [1](https://www.onejar99.com/gitbook-building-and-publishing-free-unlimitedly/)
 使用 GitBook CLI + GitHub Pages + GitHub Actions 自動建立並發佈一本書
 
-1. 建立 github repository 
+1. 建立 github repository .
 
 2. 建立 book 基本架構檔案
 
